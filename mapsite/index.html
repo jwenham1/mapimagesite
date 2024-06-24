@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<!-- jordan wenham -->
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Game</title>
+    <style>
+        a {color:orange}
+        h1 {font-family: Arial, sans-serif;}
+        h2 {font-family: Times, serif;}
+   
+    </style>
+   
+</head>
+<body style="background-color: #92c6e8">
+    <div id="challengehead" style="font-family: Arial, sans-serif;"><h1>house game</h1><hr></div>
+    <div id="randquestion"></div>
+    <div id="image"><img src="house.png" usemap="#image-map"><div>
+    <div id="randimap"><div>
+
+
+    <script>
+        //Declare question variables (could have used an array)
+        let q1 = "<h2>Click on the roof</h2>";
+        let q2 = "<h2>Click on the door</h2>";
+        let q3 = "<h2>click on the windows</h2>";
+        let q4 = "<h2>click on the sun</h2>";
+        let q5 = "<h2>click on the plants</h2>";
+        let q6 = "<h2>click on a cloud</h2>";
+        //declare map variables (could have used an array)
+        let map1 ="<map name='image-map'><area target='' alt='' title='P' href='roof.html'  coords='1159,1052,4073,2238' shape='rect'><area target=''";
+       
+        let map2 = "<map name='image-map'><area target='' alt='' title='K' href='cloud.html' coords='969,191,3578,966' shape='rect'><area target='' ";
+       
+        let map3 = "<map name='image-map'><area target='' alt='' title='3a' href='plants.html' coords='1324,3046,2346,3640' shape='rect'><area target=''";
+       
+        let map4 = "<map name='image-map'><area target='' alt='' title='3a' href='sun.html' coords='425,254,1425,1207' shape='rect'><area target=''";
+        let map5 = "<map name='image-map'><area target='' alt='' title='3a' href='window.html'coords='1615,2449,2136,2889'shape='rect'><area target=''";
+        let map6 = "<map name='image-map'><area target='' alt='' title='3a' href='Door.html' coords='2355,2549,2867,3470' shape='rect'><area target=''";
+
+
+        //Generate Random Number 1-6
+        let randq = Math.floor(Math.random()*10)%6+1;
+       
+        console.log(randq);
+        //Change Question and Image Map based on random number (using an array would have eliminated if/else if statements)
+        if (randq == 1){
+            document.getElementById('randquestion').innerHTML = q1;
+            document.getElementById('randimap').innerHTML = map1;
+        } else if (randq == 2) {
+            document.getElementById('randquestion').innerHTML = q2;
+            document.getElementById('randimap').innerHTML = map2;          
+        } else if (randq == 3) {
+            document.getElementById('randquestion').innerHTML = q3;
+            document.getElementById('randimap').innerHTML = map3;          
+        }
+         else if (randq == 4) {
+            document.getElementById('randquestion').innerHTML = q4;
+            document.getElementById('randimap').innerHTML = map4;          
+        }
+         else if (randq == 5) {
+            document.getElementById('randquestion').innerHTML = q5;
+            document.getElementById('randimap').innerHTML = map5;          
+        }
+        else if (randq == 6) {
+            document.getElementById('randquestion').innerHTML = q6;
+            document.getElementById('randimap').innerHTML = map6;          
+        }
+    </script>
+
+
+   
+</body>
+</html>
+
+ -->
+<!-- I HAD TO FIX WHAT I HAD HERE BUT I COULD NOT GET IT TO WORK SO HERE IS A BREAK DOWN OF THE HELP I GOT FOR CHAT GPT IT IS NOT NEARLY AS POLISHED AS I WANT IT TO BE I WANT TO ADD WRONG AWNSERS IN IF I CAN EVENTYUALY  I WOULD HAVE TO ADD A SECOUND ARRAY OF WRONG AWNSERS AND HAVE THEM CONFLICT EACHOTHER TO TAKE YOU TO ANOTHER SITE  THAT WOULD DISPLAY WRONG AWNSER AND IN THIS CASE IM NOT SKILLED IN PYTHON TO KNOW HOW TO SET THOSE RESTRICTIONS I THINK IF I MADE DIFFERENT ZONES TIDE TO EACH MAP I COUOLD HAVE THAT WORK SO ITS 2 MAPS IN ONE A CORRECT MAP AND AN INCORECT MAP-->
+<html>
+<head>
+    <title>Game</title>
+    <style>
+        a { color: orange; }
+        h1 { font-family: Arial, sans-serif; }
+        h2 { font-family: Times, serif; }
+    </style>
+</head>
+<body style="background-color: #92c6e8">
+    <div id="challengehead">
+        <h1>HOUSE GAME</h1>
+        <hr>
+    </div>
+    <div id="randquestion"></div>
+    <div id="image">
+        <img src="house.png" usemap="#image-map">
+        <map name="image-map" id="image-map">
+            <!-- Define your areas here FOR CORDS I USED A WEBSITE AS A TOOL THAT GAVE YOU THE CORDS I COULD HAVE ALSO USE CS PAINT TO MANUALY FIND THEM -->
+            <area target="" alt="" title="Roof" href="roof.html" coords="1159,1052,4073,2238" shape="rect">
+            <area target="" alt="" title="Cloud" href="cloud.html" coords="969,191,3578,966" shape="rect">
+            <area target="" alt="" title="Plants" href="plants.html" coords="1324,3046,2346,3640" shape="rect">
+            <area target="" alt="" title="Sun" href="sun.html" coords="425,254,1425,1207" shape="rect">
+            <area target="" alt="" title="Windows" href="window.html" coords="1615,2449,2136,2889" shape="rect">
+            <area target="" alt="" title="Door" href="Door.html" coords="2355,2549,2867,3470" shape="rect">
+        </map>
+    </div>
+
+    <script>
+        // Questions array THIS PART HERE IS AN ARRAY INSTEAD OF DOING IT ALL MANUALLY LIKE I ATTEMPTED BEFORE IT RECOMENDED THAT I USED ARRAYS AND HELPED ME BUILD THEM
+        let questions = [
+            "<h2>Click on the roof</h2>",
+            "<h2>Click on the door</h2>",
+            "<h2>Click on the windows</h2>",
+            "<h2>Click on the sun</h2>",
+            "<h2>Click on the plants</h2>",
+            "<h2>Click on a cloud</h2>"
+        ];
+
+        // Generate random index for questions THIS HERE IS FINDING WHAT QUESTIONS TO BE DESPLAYED BY USING THE MATH IMPORT SOMONE ELSE HAS MADE 
+        let randq = Math.floor(Math.random() * questions.length);
+
+        // Display random question THIS IS TAKING THE RESULT FROM ABOVE AND DISPLAYING IT IN THE STYLIZATION I HAVE ABOVE
+        document.getElementById('randquestion').innerHTML = questions[randq];
+    </script>
+
+</body>
+</html>
